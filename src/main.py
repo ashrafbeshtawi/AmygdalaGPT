@@ -1,5 +1,6 @@
+"""wrapper for Mistral AI"""
 import os
-from mistralai import Mistral
+from mistralai import Mistral, models
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -15,7 +16,16 @@ if not api_key:
 client = Mistral(api_key=api_key)
 
 def get_completion(prompt: str, model: str = "mistral-tiny") -> str:
-    
+    """
+    Generates a response using the provided prompt and specified language model.
+
+    Args:
+        prompt (str): The input prompt to be used for generating the response.
+        model (str, optional): The name of the language model to use. Defaults to "mistral-tiny".
+
+    Returns:
+        str: The generated response.
+    """
     chat_response = client.chat.complete(
         model= model,
         messages = [
@@ -25,10 +35,11 @@ def get_completion(prompt: str, model: str = "mistral-tiny") -> str:
             },
         ]
     )
-    
+
     return chat_response.choices[0].message.content
 
 def main():
+    """MAIN FUNCTION"""
     # Example usage
     while True:
         prompt = input('Enter Prompt:')
@@ -36,8 +47,9 @@ def main():
             response = get_completion(prompt)
             print(f"Prompt: {prompt}\n")
             print(f"Response: {response}")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
+        except models.HTTPValidationError as e:
+            print(f"Unexpected Payload: {e}")
+        except models.SDKError as e:
+            print(f"SDK Error: {e}")
 if __name__ == "__main__":
     main()
