@@ -46,9 +46,9 @@ cp .env.example .env
 ```
 
 ### Configuration
-##### 1) Define the required environment variables in `.env` like MISTRAL_API_KEY
+#### 1) Define the required environment variables in `.env` like MISTRAL_API_KEY
 
-##### 2) Make bin scripts executables:
+#### 2) Make bin scripts executables:
 ```
 chmod +x bin/build
 chmod +x bin/run
@@ -57,11 +57,11 @@ chmod +x bin/shell
 ```
 
 ### Run
-##### 1) Open terminal in the container:
+#### 1) Open terminal in the container:
 ```
 bin/shell
 ```
-##### 2) Run main.py in the terminal:
+#### 2) Run main.py in the terminal:
 ```
 python main.py
 ```
