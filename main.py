@@ -21,7 +21,7 @@ def get_completion(prompt: str, model: str = "mistral-tiny") -> str:
         messages = [
             {
                 "role": "user",
-                "content": "What is the best French cheese?",
+                "content": prompt,
             },
         ]
     )
@@ -30,13 +30,14 @@ def get_completion(prompt: str, model: str = "mistral-tiny") -> str:
 
 def main():
     # Example usage
-    prompt = "Explain quantum computing in simple terms"
-    try:
-        response = get_completion(prompt)
-        print(f"Prompt: {prompt}\n")
-        print(f"Response: {response}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    while True:
+        prompt = input('Enter Prompt:')
+        try:
+            response = get_completion(prompt)
+            print(f"Prompt: {prompt}\n")
+            print(f"Response: {response}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
