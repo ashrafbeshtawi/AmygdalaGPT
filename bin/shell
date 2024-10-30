@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it amygdalagpt-python-1 /bin/bash
+docker exec -it python /bin/bash
