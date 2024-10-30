@@ -32,8 +32,7 @@ The core of the system is an intelligent agent that manages both long-term and s
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3 (Packages: python-dotenv, mistralai)
-- Mistral AI API access
+- Docker ... thats it 🤩🤩
 
 ### Installation
 ```bash
@@ -47,12 +46,7 @@ cp .env.example .env
 ```
 
 ### Configuration
-Required environment variables in `.env`:
-```
-MISTRAL_API_KEY=your_api_key_here
-DB_CONNECTION_STRING=postgresql://user:password@localhost:5432/amygdala
-CONTEXT_WINDOW_SIZE=2048  # Adjust based on your needs
-```
+Define the required environment variables in `.env` like MISTRAL_API_KEY
 
 Make bin scripts executables:
 ```
@@ -60,7 +54,6 @@ chmod +x bin/build
 chmod +x bin/run
 chmod +x bin/stop
 chmod +x bin/shell
-
 ```
 
 ### Run
@@ -97,15 +90,6 @@ Contributions are welcome!
 ## 📝 License
 
 This project is licensed under the MIT License.
-
-## 🔮 Future Enhancements
-
-- [ ] Implementation of forgetting mechanisms for outdated information
-- [ ] Advanced memory consolidation algorithms
-- [ ] Multi-modal memory support
-- [ ] Distributed memory architecture
-- [ ] Memory compression techniques
-- [ ] Enhanced security measures for sensitive information
 
 ## 📞 Contact
 
