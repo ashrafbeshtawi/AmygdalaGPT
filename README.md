@@ -46,9 +46,9 @@ cp .env.example .env
 ```
 
 ### Configuration
-Define the required environment variables in `.env` like MISTRAL_API_KEY
+##### 1) Define the required environment variables in `.env` like MISTRAL_API_KEY
 
-Make bin scripts executables:
+##### 2) Make bin scripts executables:
 ```
 chmod +x bin/build
 chmod +x bin/run
