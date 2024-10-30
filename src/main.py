@@ -1,5 +1,5 @@
 import os
-from mistralai.client import MistralClient
+from mistralai import Mistral
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -12,7 +12,7 @@ if not api_key:
     raise ValueError("Missing MISTRAL_API_KEY environment variable")
 
 # Initialize the client
-client = MistralClient(api_key=api_key)
+client = Mistral(api_key=api_key)
 
 def get_completion(prompt: str, model: str = "mistral-tiny") -> str:
     
