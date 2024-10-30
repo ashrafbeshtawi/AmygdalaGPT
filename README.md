@@ -48,13 +48,30 @@ cp .env.example .env
 
 ### Configuration
 Required environment variables in `.env`:
-```env
+```
 MISTRAL_API_KEY=your_api_key_here
 DB_CONNECTION_STRING=postgresql://user:password@localhost:5432/amygdala
 CONTEXT_WINDOW_SIZE=2048  # Adjust based on your needs
 ```
 
+Make bin scripts executables:
+```
+chmod +x bin/build
+chmod +x bin/run
+chmod +x bin/stop
+chmod +x bin/shell
 
+```
+
+### Run
+##### 1) Open terminal in the container:
+```
+bin/shell
+```
+##### 2) Run main.py in the terminal:
+```
+python main.py
+```
 
 ## 📚 Features
 
